@@ -1,0 +1,29 @@
+<!DOCTYPE RCC><RCC version="1.0">
+    <qresource prefix="/translations">
+        <file alias="bg">locale/xgamingup_bg.qm</file>
+        <file alias="ca">locale/xgamingup_ca.qm</file>
+        <file alias="cs">locale/xgamingup_cs.qm</file>
+        <file alias="da">locale/xgamingup_da.qm</file>
+        <file alias="de">locale/xgamingup_de.qm</file>
+        <file alias="en">locale/xgamingup_en.qm</file>
+        <file alias="en_US">locale/xgamingup_en_US.qm</file>
+        <file alias="es">locale/xgamingup_es.qm</file>
+        <file alias="fi">locale/xgamingup_fi.qm</file>
+        <file alias="fr_FR">locale/xgamingup_fr_FR.qm</file>
+        <file alias="it">locale/xgamingup_it.qm</file>
+        <file alias="ja">locale/xgamingup_ja.qm</file>
+        <file alias="ko_KR">locale/xgamingup_ko_KR.qm</file>
+        <file alias="nl">locale/xgamingup_nl.qm</file>
+        <file alias="pl">locale/xgamingup_pl.qm</file>
+        <file alias="pt">locale/xgamingup_pt.qm</file>
+        <file alias="pt_BR">locale/xgamingup_pt_BR.qm</file>
+        <file alias="ro_RO">locale/xgamingup_ro_RO.qm</file>
+        <file alias="ru">locale/xgamingup_ru.qm</file>
+        <file alias="sk">locale/xgamingup_sk.qm</file>
+        <file alias="sv">locale/xgamingup_sv.qm</file>
+        <file alias="tr">locale/xgamingup_tr.qm</file>
+        <file alias="uk">locale/xgamingup_uk.qm</file>
+        <file alias="zh_CN">locale/xgamingup_zh_CN.qm</file>
+        <file alias="zh_TW">locale/xgamingup_zh_TW.qm</file>
+    </qresource>
+</RCC>

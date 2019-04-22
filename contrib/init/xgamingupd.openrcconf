@@ -1,0 +1,26 @@
+# /etc/conf.d/xgamingupd: config file for /etc/init.d/xgamingupd
+
+# Config file location
+#BITCOIND_CONFIGFILE="/etc/xgamingup/xgamingup.conf"
+
+# What directory to write pidfile to?  (created and owned by $BITCOIND_USER)
+#BITCOIND_PIDDIR="/var/run/xgamingupd"
+
+# What filename to give the pidfile
+#BITCOIND_PIDFILE="${BITCOIND_PIDDIR}/xgamingupd.pid"
+
+# Where to write xgamingupd data (be mindful that the blockchain is large)
+#BITCOIND_DATADIR="/var/lib/xgamingupd"
+
+# User and group to own xgamingupd process
+#BITCOIND_USER="xgamingup"
+#BITCOIND_GROUP="xgamingup"
+
+# Path to xgamingupd executable
+#BITCOIND_BIN="/usr/bin/xgamingupd"
+
+# Nice value to run xgamingupd under
+#BITCOIND_NICE=0
+
+# Additional options (avoid -conf and -datadir, use flags above)
+BITCOIND_OPTS=""
