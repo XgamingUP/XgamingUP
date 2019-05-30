@@ -54,12 +54,13 @@ static void convertSeed6(std::vector<CAddress>& vSeedsOut, const SeedSpec6* data
 // + Contains no strange transactions
 static Checkpoints::MapCheckpoints mapCheckpoints =
     boost::assign::map_list_of
-		(0, uint256("0x0000003acbcf97f39cdb4964f3d71262e6726f9f30355ff9c4443bcfa55e03b6"));
+        (0, uint256("0x0000003acbcf97f39cdb4964f3d71262e6726f9f30355ff9c4443bcfa55e03b6"));
+        (54200, uint256("0x79bcdaf228f1718536b8263c747aebd9d753570d10e11a7bd1f27e35f9281565"))
 
 static const Checkpoints::CCheckpointData data = {
     &mapCheckpoints,
-    1546943434, // * UNIX timestamp of last checkpoint block
-    300522,     // * total number of transactions between genesis and last checkpoint
+    1559206604, // * UNIX timestamp of last checkpoint block
+    110783,     // * total number of transactions between genesis and last checkpoint
                 //   (the tx=... number in the SetBestChain debug.log lines)
     2000        // * estimated number of transactions per day after checkpoint
 };
@@ -145,6 +146,9 @@ public:
         vSeeds.push_back(CDNSSeedData("seed4.xgamingup.online", "seed4.xgamingup.online"));
         vSeeds.push_back(CDNSSeedData("seed5.xgamingup.online", "seed5.xgamingup.online"));
         vSeeds.push_back(CDNSSeedData("seed6.xgamingup.online", "seed6.xgamingup.online"));
+        vSeeds.push_back(CDNSSeedData("seed7.xgamingup.online", "seed7.xgamingup.online"));
+        vSeeds.push_back(CDNSSeedData("seed8.xgamingup.online", "seed8.xgamingup.online"));
+        vSeeds.push_back(CDNSSeedData("seed9.xgamingup.online", "seed9.xgamingup.online"));
 
         // XgamingUP addresses start with 'X'
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 75);
