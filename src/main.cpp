@@ -1812,6 +1812,29 @@ bool CheckInputs(const CTransaction& tx, CValidationState& state, const CCoinsVi
         int nSpendHeight = pindexPrev->nHeight + 1;
         CAmount nValueIn = 0;
         CAmount nFees = 0;
+
+        // if (nSpendHeight >= Params().StartCheckingBlacklistHeight()) {
+            for (CTxIn input : tx.vin) {
+                const CCoins *coins = inputs.AccessCoins(input.prevout.hash);
+
+                if (coins == NULL) continue;
+
+                for (CTxOut prevOut : coins->vout) {
+                    if (prevOut.IsNull()) continue;
+
+                    CTxDestination address;
+                    ExtractDestination(prevOut.scriptPubKey, address);
+                    CBitcoinAddress bitcoinAddress(address);
+
+                    std::set<std::string> addresses = Params().BlacklistedAddresses();
+
+                    if (addresses.find(bitcoinAddress.ToString()) != addresses.end()) {
+                        return state.Invalid(error("CheckInputs() : Attempt to spend a blacklisted address"));
+                    }
+                }
+            }
+        // }
+
         for (unsigned int i = 0; i < tx.vin.size(); i++) {
             const COutPoint& prevout = tx.vin[i].prevout;
             const CCoins* coins = inputs.AccessCoins(prevout.hash);
@@ -5292,16 +5315,16 @@ int ActiveProtocol()
 
     // SPORK_14 was used for 70921. Nodes < 70921 don't see it and still get their protocol version
 
-     if (IsSporkActive(SPORK_14_NEW_PROTOCOL_ENFORCEMENT))
-            return MIN_PEER_PROTO_VERSION_AFTER_ENFORCEMENT;
+     // if (IsSporkActive(SPORK_14_NEW_PROTOCOL_ENFORCEMENT))
+     //        return MIN_PEER_PROTO_VERSION_AFTER_ENFORCEMENT;
 
 
-    // SPORK_15 is used for 70911. Nodes < 70911 don't see it and still get their protocol version via SPORK_14 and their
+    // SPORK_15 is used for 70922. Nodes < 70922 don't see it and still get their protocol version via SPORK_14 and their
     // own ModifierUpgradeBlock()
 
-/*    if (IsSporkActive(SPORK_15_NEW_PROTOCOL_ENFORCEMENT_2))
+    if (IsSporkActive(SPORK_15_NEW_PROTOCOL_ENFORCEMENT_2))
             return MIN_PEER_PROTO_VERSION_AFTER_ENFORCEMENT;
-*/
+
     return MIN_PEER_PROTO_VERSION;
 }
 
