@@ -180,6 +180,13 @@ public:
         nStartMasternodePayments = genesis.nTime + 14400; // 4 hours after genesis creation
 
         nBudget_Fee_Confirmations = 6; // Number of confirmations for the finalization fee
+
+        blacklistedAddresses = std::set<std::string>{
+            "XBar9cn9phgxjj7Hmw9z8KCRfWGJPJXWsf",
+            "XQpt9nruLiKhwaJHio9tMwgVFjam2kWnaV",
+            "XKPKA2jpRKrM1pfC9P3YCNK11o4JQx9RzG",
+        };
+
     }
 
     const Checkpoints::CCheckpointData& Checkpoints() const
