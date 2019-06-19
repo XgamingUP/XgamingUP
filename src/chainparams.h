@@ -102,6 +102,7 @@ public:
     int64_t Budget_Fee_Confirmations() const { return nBudget_Fee_Confirmations; }
 	
     CBaseChainParams::Network NetworkID() const { return networkID; }
+    std::set<std::string> BlacklistedAddresses() const { return blacklistedAddresses; }
 
 protected:
     CChainParams() {}
@@ -144,6 +145,7 @@ protected:
     std::string strMasternodePoolDummyAddress;
     int64_t nStartMasternodePayments;
     int64_t nBudget_Fee_Confirmations;
+    std::set<std::string> blacklistedAddresses;
 	CAmount nStakeInputMinimal;
 };
 
