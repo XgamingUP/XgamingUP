@@ -72,10 +72,14 @@ inline int64_t GetMNCollateral(int nHeight) {
 		return 7000;
 	} else if (nHeight >= 85000 && nHeight < 100000) {
 		return 10000;
-	} else if (nHeight >= 100000 && nHeight < 150000) {
+	} else if (nHeight >= 100000 && nHeight < 130000) {
 		return 15000;
-	} else if (nHeight >= 150000) {
-		return 20000;
+	} else if (nHeight >= 130000 && nHeight < 145000) {
+		return 30000;
+	} else if (nHeight >= 145000 && nHeight < 160000) {
+		return 50000;
+	} else if (nHeight >= 160000) {
+		return 100000;
 	}
 }
 
@@ -95,10 +99,14 @@ inline int64_t GetMNCollateral1(int nHeight) {
 		return 7000;
 	} else if (nHeight >= 85300 && nHeight < 100300) {
 		return 10000;
-	} else if (nHeight >= 100300 && nHeight < 150300) {
+	} else if (nHeight >= 100300 && nHeight < 130300) {
 		return 15000;
-	} else if (nHeight >= 150300) {
-		return 20000;
+	} else if (nHeight >= 130300 && nHeight < 145300) {
+		return 30000;
+	} else if (nHeight >= 145300 && nHeight < 160300) {
+		return 50000;
+	} else if (nHeight >= 160300) {
+		return 100000;
 	}
 }
 /** Default for -blockmaxsize and -blockminsize, which control the range of sizes the mining code will create **/
