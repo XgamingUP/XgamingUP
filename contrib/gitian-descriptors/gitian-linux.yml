@@ -1,5 +1,5 @@
 ---
-name: "xgamingup-linux-1.0.2.0"
+name: "xgamingup-linux-1.0.3.0"
 enable_cache: true
 suites:
 - "trusty"
