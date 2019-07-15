@@ -1577,30 +1577,18 @@ int64_t GetBlockValue(int nHeight)
         nSubsidy = 50 * COIN;
 	} else if (nHeight < 100000 && nHeight >= 85000) {
         nSubsidy = 75 * COIN;
-	} else if (nHeight < 150000 && nHeight >= 100000) {
+	} else if (nHeight < 130000 && nHeight >= 100000) {
         nSubsidy = 100 * COIN;
-	} else if (nHeight < 155000 && nHeight >= 150000) {
-        nSubsidy = 110 * COIN;
-	} else if (nHeight < 160000 && nHeight >= 155000) {
-        nSubsidy = 125 * COIN;
-	} else if (nHeight < 175000 && nHeight >= 160000) {
-        nSubsidy = 135 * COIN;
-	} else if (nHeight < 200000 && nHeight >= 175000) {
-        nSubsidy = 150 * COIN;
-    } else if (nHeight < 205000 && nHeight >= 200000) {
-        nSubsidy = 200 * COIN;
-    } else if (nHeight < 210000 && nHeight >= 205000) {
-        nSubsidy = 250 * COIN;
-    } else if (nHeight < 220000 && nHeight >= 210000) {
-        nSubsidy = 300 * COIN;
-    } else if (nHeight < 230000 && nHeight >= 220000) {
-        nSubsidy = 250 * COIN;
-    } else if (nHeight < 240000 && nHeight >= 230000) {
-        nSubsidy = 200 * COIN;
-    } else if (nHeight < 300000 && nHeight >= 240000) {
-        nSubsidy = 100 * COIN;
+	} else if (nHeight < 145000 && nHeight >= 130000) {
+        nSubsidy = 30 * COIN;
+	} else if (nHeight < 160000 && nHeight >= 145000) {
+        nSubsidy = 32 * COIN;
+	} else if (nHeight < 250000 && nHeight >= 160000) {
+        nSubsidy = 35 * COIN;
+	} else if (nHeight < 350000 && nHeight >= 250000) {
+        nSubsidy = 15 * COIN;
 	} else {
-        nSubsidy = 50 * COIN;
+        nSubsidy = 10 * COIN;
     }
     return nSubsidy;
 
@@ -5313,17 +5301,17 @@ bool static ProcessMessage(CNode* pfrom, string strCommand, CDataStream& vRecv, 
 int ActiveProtocol()
 {
 
-    // SPORK_14 was used for 70921. Nodes < 70921 don't see it and still get their protocol version
+    // SPORK_14 was used for 70923. Nodes < 70922 don't see it and still get their protocol version
 
-     // if (IsSporkActive(SPORK_14_NEW_PROTOCOL_ENFORCEMENT))
-     //        return MIN_PEER_PROTO_VERSION_AFTER_ENFORCEMENT;
+      if (IsSporkActive(SPORK_14_NEW_PROTOCOL_ENFORCEMENT))
+             return MIN_PEER_PROTO_VERSION_AFTER_ENFORCEMENT;
 
 
     // SPORK_15 is used for 70922. Nodes < 70922 don't see it and still get their protocol version via SPORK_14 and their
     // own ModifierUpgradeBlock()
 
-    if (IsSporkActive(SPORK_15_NEW_PROTOCOL_ENFORCEMENT_2))
-            return MIN_PEER_PROTO_VERSION_AFTER_ENFORCEMENT;
+    // if (IsSporkActive(SPORK_15_NEW_PROTOCOL_ENFORCEMENT_2))
+            // return MIN_PEER_PROTO_VERSION_AFTER_ENFORCEMENT;
 
     return MIN_PEER_PROTO_VERSION;
 }
